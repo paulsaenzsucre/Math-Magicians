@@ -1,12 +1,14 @@
 import './App.css';
-import CalculatorButton from './components/CalculatorButton';
+import CalculatorDisplay from './components/CalculatorDisplay';
 
 function App() {
   return (
     <div className="App">
-      <CalculatorButton type="digit-0" caption="0" />
-      <CalculatorButton type="clear" caption="AC" />
-      <CalculatorButton type="plus" caption="+" />
+      <CalculatorDisplay value="0" />
+      <br />
+      <CalculatorDisplay value="569824" />
+      <br />
+      <CalculatorDisplay value="3698712" />
     </div>
   );
 }
