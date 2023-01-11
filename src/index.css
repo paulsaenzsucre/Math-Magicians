@@ -27,3 +27,35 @@ body {
 .App {
   height: 100vh;
 }
+
+/* Calculator Button Styles */
+.calc-btn {
+  position: relative;
+  width: var(--calc-btn-width);
+  height: var(--calc-btn-height);
+  text-align: center;
+  background: lightgray;
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--calc-btn-fontsize);
+  color: var(--calc-btn-forecolor);
+}
+
+.digit-0 {
+  width: var(--calc-btn-dblwidth);
+  grid-column: span 2;
+}
+
+.division,
+.times,
+.minus,
+.plus,
+.equals {
+  background: var(--calc-btn-bgcolor2);
+}
+
+.btn-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
