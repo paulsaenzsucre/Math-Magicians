@@ -1,27 +1,29 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto+Mono:wght@700&display=swap');
+
+:root {
+  --calc-width: min(90vw, 25rem);
+  --grid-line-width: 0.0625rem;
+  --calc-btn-width: calc((var(--calc-width) - 3 * var(--grid-line-width))/4);
+  --calc-btn-height:calc(var(--calc-btn-width) / 2);
+  --calc-btn-dblwidth: calc(2 * var(--calc-btn-width) + var(--grid-line-width));
+  --calc-btn-bgcolor: gray;
+  --calc-btn-bgcolor2: orange;
+  --calc-btn-forecolor: black;
+  --calc-btn-fontsize: calc(0.5 * var(--calc-btn-height));
+  --calc-display-width: calc(4 * var(--calc-btn-width) + 3 * var(--grid-line-width));
+  --calc-display-height: var(--calc-btn-height);
+  --calc-display-bgcolor: black;
+  --calc-display-forecolor: #33ff33;
+  --calc-display-fontsize: calc(0.8 * var(--calc-btn-height));
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
 }
