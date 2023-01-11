@@ -28,6 +28,18 @@ body {
   height: 100vh;
 }
 
+/* Calculator Container Styles*/
+.calc-cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  justify-items: center;
+  gap: 0.063rem;
+  width: var(--calc-width);  
+  background: var(--calc-btn-bgcolor);
+  margin: 0 auto;
+}
+
 /* Calculator Display Styles */
 .calc-display {
   background: var(--calc-display-bgcolor);
