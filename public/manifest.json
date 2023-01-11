@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MathMag App",
+  "name": "Math Magicians App",
   "icons": [
     {
       "src": "favicon.ico",

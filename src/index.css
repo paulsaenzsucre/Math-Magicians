@@ -1,27 +1,90 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto+Mono:wght@700&display=swap');
+
+:root {
+  --calc-width: min(90vw, 25rem);
+  --grid-line-width: 0.0625rem;
+  --calc-btn-width: calc((var(--calc-width) - 3 * var(--grid-line-width)) / 4);
+  --calc-btn-height: calc(var(--calc-btn-width) / 2);
+  --calc-btn-dblwidth: calc(2 * var(--calc-btn-width) + var(--grid-line-width));
+  --calc-btn-bgcolor: gray;
+  --calc-btn-bgcolor2: orange;
+  --calc-btn-forecolor: black;
+  --calc-btn-fontsize: calc(0.5 * var(--calc-btn-height));
+  --calc-display-width: calc(4 * var(--calc-btn-width) + 3 * var(--grid-line-width));
+  --calc-display-height: var(--calc-btn-height);
+  --calc-display-bgcolor: black;
+  --calc-display-forecolor: #3f3;
+  --calc-display-fontsize: calc(0.8 * var(--calc-btn-height));
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+}
+
+/* Calculator Container Styles */
+.calc-cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  justify-items: center;
+  gap: 0.063rem;
+  width: var(--calc-width);
+  background: var(--calc-btn-bgcolor);
+  margin: 0 auto;
+}
+
+/* Calculator Display Styles */
+.calc-display {
+  background: var(--calc-display-bgcolor);
+  width: var(--calc-display-width);
+  height: var(--calc-display-height);
+  grid-column: span 4;
+  text-align: right;
+}
+
+.calc-display-text {
+  font-family: 'Nixie One', cursive;
+  color: var(--calc-display-forecolor);
+  font-size: var(--calc-display-fontsize);
+  text-align: right;
+  padding: 1rem;
+}
+
+/* Calculator Button Styles */
+.calc-btn {
+  position: relative;
+  width: var(--calc-btn-width);
+  height: var(--calc-btn-height);
+  text-align: center;
+  background: lightgray;
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--calc-btn-fontsize);
+  color: var(--calc-btn-forecolor);
+}
+
+.digit-0 {
+  width: var(--calc-btn-dblwidth);
+  grid-column: span 2;
+}
+
+.division,
+.times,
+.minus,
+.plus,
+.equals {
+  background: var(--calc-btn-bgcolor2);
+}
+
+.btn-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
