@@ -28,6 +28,23 @@ body {
   height: 100vh;
 }
 
+/* Calculator Display Styles */
+.calc-display {
+  background: var(--calc-display-bgcolor);
+  width: var(--calc-display-width);
+  height: var(--calc-display-height);
+  grid-column: span 4;
+  text-align: right;
+}
+
+.calc-display-text {
+  font-family: 'Nixie One', cursive;
+  color: var(--calc-display-forecolor);
+  font-size: var(--calc-display-fontsize);
+  text-align: right;
+  padding: 1rem;
+}
+
 /* Calculator Button Styles */
 .calc-btn {
   position: relative;
