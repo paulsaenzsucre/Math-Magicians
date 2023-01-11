@@ -22,7 +22,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -51,6 +51,12 @@
     <li><a href="https://html.spec.whatwg.org/multipage/">JavaScript </a></li>
   </ul>
 </details>
+
+### Key Features <a name="key-features"></a>
+
+- **You can see a calculator mockup with a display and buttons for digits and operations.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -139,7 +145,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Deployment
+### Deployment <a name="deployment"></a>
 
 You car read more about deployment in the following link:
 
