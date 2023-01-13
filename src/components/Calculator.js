@@ -34,7 +34,7 @@ const Calculator = () => {
       <CalculatorDisplay value={state.display} />
       <CalculatorButton type="clear" caption="AC" handleClick={buttonClick} />
       <CalculatorButton type="sign" caption="+/-" handleClick={buttonClick} />
-      <CalculatorButton type="percentage" caption="%" handleClick={buttonClick} />
+      <CalculatorButton type="percentage" caption="MOD" handleClick={buttonClick} />
       <CalculatorButton type="division" caption="&#247;" handleClick={buttonClick} />
       <CalculatorButton type="digit-7" caption="7" handleClick={buttonClick} />
       <CalculatorButton type="digit-8" caption="8" handleClick={buttonClick} />
