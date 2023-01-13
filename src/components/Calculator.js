@@ -3,7 +3,7 @@ import calculate from '../logic/calculate';
 import CalculatorButton from './CalculatorButton';
 import CalculatorDisplay from './CalculatorDisplay';
 
-function Calculator() {
+const Calculator = () => {
   const [state, setState] = useState({
     total: null,
     next: null,
@@ -53,5 +53,5 @@ function Calculator() {
       <CalculatorButton type="equals" caption="=" handleClick={buttonClick} />
     </div>
   );
-}
+};
 export default Calculator;
