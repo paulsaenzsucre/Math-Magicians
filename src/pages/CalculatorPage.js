@@ -1,4 +1,5 @@
 import React from 'react';
+import Calculator from '../components/Calculator';
 
 class CalculatorPage extends React.Component {
   constructor(props) {
@@ -6,11 +7,12 @@ class CalculatorPage extends React.Component {
     this.state = {};
   }
 
-  render = () => {
-    const text = 'CALCULATOR PAGE';
-    return (
-      <h1>{text}</h1>
-    );
-  }
+  render = () => (
+    <div className="calcPageCont">
+      <h1 className="pageTitle">Let&apos;s do some math!</h1>
+      <Calculator />
+    </div>
+
+  )
 }
 export default CalculatorPage;
