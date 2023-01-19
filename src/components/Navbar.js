@@ -21,32 +21,26 @@ class Navbar extends React.Component {
         text: 'Quote',
       },
     ];
-    this.state = {
-      isActive: false,
-    };
   }
 
   #links;
 
-  render = () => {
-    const { isActive } = this.state;
-    return (
-      <nav className="navBar">
-        <ul className="navBarCont">
-          {this.#links.map((link) => (
-            <li key={link.id}>
-              <NavLink
-                to={link.path}
-                className={isActive ? 'active-link' : 'none'}
-                exact="true"
-              >
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  }
+  render = () => (
+    <nav className="navBar">
+      <ul className="navBarCont">
+        {this.#links.map((link) => (
+          <li key={link.id} className="navItem">
+            <NavLink
+              to={link.path}
+              className={({ isActive }) => (isActive ? 'navLink activeLink' : 'navLink')}
+              exact="true"
+            >
+              {link.text}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
 }
 export default Navbar;
