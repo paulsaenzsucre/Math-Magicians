@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Roboto&display=swap');
 
 :root {
+  --page-bgcolor: black;
+  --page-forecolor: #3f3;
+  --page-titlefont: 'Roboto', sans-serif;
+  --page-forefont: 'Alegreya', serif;
+  --page-maxwidth: 60rem;
+  --navBar-navLinkFont: 'Roboto', sans-serif;
+  --navBar-navLinkFontSize: 1.5rem;
+  --navBar-navLinkColor: #3f3;
+  --navBar-navLinkBgColor: black;
   --calc-width: min(90vw, 25rem);
   --grid-line-width: 0.0625rem;
   --calc-btn-width: calc((var(--calc-width) - 3 * var(--grid-line-width)) / 4);
@@ -18,14 +29,81 @@
   --calc-display-fontsize: calc(0.8 * var(--calc-btn-height));
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background: var(--page-bgcolor);
+  color: var(--page-forecolor);
+  max-width: var(--page-maxwidth);
+  text-align: center;
+  margin: 0 auto;
+}
+
 .App {
   height: 100vh;
+  background: var(--page-bgcolor);
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
+.pageTitle,
+.appName {
+  font-family: var(--page-titlefont);
+  text-align: center;
+}
+
+.pageTitle {
+  margin-bottom: 2rem;
+}
+
+.navBarCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  font-family: var(--navBar-navLinkFont);
+  font-size: var(--navBar-navLinkFontSize);
+  color: var(--navBar-navLinkColor);
+  background: var(--navBar-navLinkBgColor);
+  padding: 0 1rem;
+}
+
+.activeLink {
+  color: var(--navBar-navLinkBgColor);
+  background: var(--navBar-navLinkColor);
+}
+
+/* Home Page Styles */
+.quoteText,
+.homeText {
+  margin: 1rem;
+  text-align: center;
+  font-family: var(--page-forefont);
+  font-size: 1.25rem;
+}
+
+/* Calculator Page Stykes */
+.calcPageCont {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Calculator Container Styles */
@@ -87,4 +165,106 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Quote Page Styles */
+.quoteCont {
+  height: 70vh;
+  position: relative;
+}
+
+.quoteText {
+  quotes: "\201C""\201D""\2018""\2019";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.quote::before {
+  content: open-quote;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+
+.quote::after {
+  content: close-quote;
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0 1rem;
+}
+
+.author {
+  font-weight: bolder;
+}
+
+.author::before {
+  content: "\2014";
+  margin-right: 1rem;
+}
+
+/* This applies from 768px onwards */
+@media (min-width: 48rem) {
+  /* Header Styles */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .pageTitle,
+  .appName {
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .navBarCont {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 0.5rem 1rem 0.5rem 0;
+  }
+
+  .navItem {
+    list-style: none;
+  }
+
+  .navLink {
+    text-decoration: none;
+    font-family: var(--navBar-navLinkFont);
+    font-size: var(--navBar-navLinkFontSize);
+    color: var(--navBar-navLinkColor);
+    background: var(--navBar-navLinkBgColor);
+  }
+
+  .activeLink {
+    color: var(--navBar-navLinkBgColor);
+    background: var(--navBar-navLinkColor);
+  }
+
+  /* Home Page Styles */
+  .homeText {
+    text-align: left;
+  }
+
+  /* Calculator Page Stykes */
+  .calcPageCont {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .calc-cont {
+    margin: 0 2rem 0 0;
+  }
+
+  /* Quote Page Styles */
+  .quoteText {
+    text-align: left;
+  }
 }
