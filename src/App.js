@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import CalculatorPage from './pages/CalculatorPage';
 import QuotePage from './pages/QuotePage';
+import Header from './components/Header';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/calculator/" element={<CalculatorPage />} />
