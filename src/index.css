@@ -184,7 +184,7 @@ header {
 }
 
 .quote {
-  font-style:italic;
+  font-style: italic;
 }
 
 .quote::before {
@@ -227,7 +227,7 @@ header {
   .navBarCont {
     display: flex;
     flex-direction: row;
-    align-items:flex-end;
+    align-items: flex-end;
     margin: 0.5rem 1rem 0.5rem 0;
   }
 
@@ -267,5 +267,4 @@ header {
   .quoteText {
     text-align: left;
   }
-
 }
