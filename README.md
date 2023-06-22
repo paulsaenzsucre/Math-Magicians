@@ -62,7 +62,7 @@
 
 Click in the following link to see a working live version of this project.
 
-- [Live Demo Link](https://elafildecolor.github.io/Math-Magicians/)
+- [Live Demo Link](https://www.paulsaenzsucre.dev/Math-Magicians/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
