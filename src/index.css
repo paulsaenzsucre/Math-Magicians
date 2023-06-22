@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Roboto&display=swap');
+
+:root {
+  --page-bgcolor: black;
+  --page-forecolor: #3f3;
+  --page-titlefont: 'Roboto', sans-serif;
+  --page-forefont: 'Alegreya', serif;
+  --page-maxwidth: 60rem;
+  --navBar-navLinkFont: 'Roboto', sans-serif;
+  --navBar-navLinkFontSize: 1.5rem;
+  --navBar-navLinkColor: #3f3;
+  --navBar-navLinkBgColor: black;
+  --calc-width: min(90vw, 25rem);
+  --grid-line-width: 0.0625rem;
+  --calc-btn-width: calc((var(--calc-width) - 3 * var(--grid-line-width)) / 4);
+  --calc-btn-height: calc(var(--calc-btn-width) / 2);
+  --calc-btn-dblwidth: calc(2 * var(--calc-btn-width) + var(--grid-line-width));
+  --calc-btn-bgcolor: gray;
+  --calc-btn-bgcolor2: orange;
+  --calc-btn-forecolor: black;
+  --calc-btn-fontsize: calc(0.5 * var(--calc-btn-height));
+  --calc-display-width: calc(4 * var(--calc-btn-width) + 3 * var(--grid-line-width));
+  --calc-display-height: var(--calc-btn-height);
+  --calc-display-bgcolor: black;
+  --calc-display-forecolor: #3f3;
+  --calc-display-fontsize: calc(0.8 * var(--calc-btn-height));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--page-bgcolor);
+  color: var(--page-forecolor);
+  max-width: var(--page-maxwidth);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.App {
+  height: 100vh;
+  background: var(--page-bgcolor);
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
+.pageTitle,
+.appName {
+  font-family: var(--page-titlefont);
+  text-align: center;
+}
+
+.pageTitle {
+  margin-bottom: 2rem;
+}
+
+.navBarCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  font-family: var(--navBar-navLinkFont);
+  font-size: var(--navBar-navLinkFontSize);
+  color: var(--navBar-navLinkColor);
+  background: var(--navBar-navLinkBgColor);
+  padding: 0 1rem;
+}
+
+.activeLink {
+  color: var(--navBar-navLinkBgColor);
+  background: var(--navBar-navLinkColor);
+}
+
+/* Home Page Styles */
+.quoteText,
+.homeText {
+  margin: 1rem;
+  text-align: center;
+  font-family: var(--page-forefont);
+  font-size: 1.25rem;
+}
+
+/* Calculator Page Stykes */
+.calcPageCont {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Calculator Container Styles */
+.calc-cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  justify-items: center;
+  gap: 0.063rem;
+  width: var(--calc-width);
+  background: var(--calc-btn-bgcolor);
+  margin: 0 auto;
+}
+
+/* Calculator Display Styles */
+.calc-display {
+  background: var(--calc-display-bgcolor);
+  width: var(--calc-display-width);
+  height: var(--calc-display-height);
+  grid-column: span 4;
+  text-align: right;
+}
+
+.calc-display-text {
+  font-family: 'Nixie One', cursive;
+  color: var(--calc-display-forecolor);
+  font-size: var(--calc-display-fontsize);
+  text-align: right;
+  padding: 1rem;
+}
+
+/* Calculator Button Styles */
+.calc-btn {
+  position: relative;
+  width: var(--calc-btn-width);
+  height: var(--calc-btn-height);
+  text-align: center;
+  background: lightgray;
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--calc-btn-fontsize);
+  color: var(--calc-btn-forecolor);
+}
+
+.digit-0 {
+  width: var(--calc-btn-dblwidth);
+  grid-column: span 2;
+}
+
+.division,
+.times,
+.minus,
+.plus,
+.equals {
+  background: var(--calc-btn-bgcolor2);
+}
+
+.btn-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Quote Page Styles */
+.quoteCont {
+  height: 70vh;
+  position: relative;
+}
+
+.quoteText {
+  quotes: "\201C""\201D""\2018""\2019";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.quote::before {
+  content: open-quote;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+
+.quote::after {
+  content: close-quote;
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0 1rem;
+}
+
+.author {
+  font-weight: bolder;
+}
+
+.author::before {
+  content: "\2014";
+  margin-right: 1rem;
+}
+
+/* This applies from 768px onwards */
+@media (min-width: 48rem) {
+  /* Header Styles */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .pageTitle,
+  .appName {
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .navBarCont {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 0.5rem 1rem 0.5rem 0;
+  }
+
+  .navItem {
+    list-style: none;
+  }
+
+  .navLink {
+    text-decoration: none;
+    font-family: var(--navBar-navLinkFont);
+    font-size: var(--navBar-navLinkFontSize);
+    color: var(--navBar-navLinkColor);
+    background: var(--navBar-navLinkBgColor);
+  }
+
+  .activeLink {
+    color: var(--navBar-navLinkBgColor);
+    background: var(--navBar-navLinkColor);
+  }
+
+  /* Home Page Styles */
+  .homeText {
+    text-align: left;
+  }
+
+  /* Calculator Page Stykes */
+  .calcPageCont {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .calc-cont {
+    margin: 0 2rem 0 0;
+  }
+
+  /* Quote Page Styles */
+  .quoteText {
+    text-align: left;
+  }
+}
